@@ -1,12 +1,11 @@
-
 import * as C from "./App.styles"
 import { TableArea } from './components/TableArea'
 
 
 
+
 const App = () => {
    
-
 
   return (
     <C.Container>
@@ -15,10 +14,9 @@ const App = () => {
       </C.Header>
       <C.Body>
 
-        {/* áREA DE INFORMAÇÕES */}
         
         
-        {/* áREA DE INFORMAÇÕES */}
+        {/* áREA DE insderção */}
         
         
         <TableArea />
