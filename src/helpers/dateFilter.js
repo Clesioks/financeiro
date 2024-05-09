@@ -5,7 +5,7 @@ export const getCurrentMonth = () => {
 
 export const filterListByMonth = (list, date) => {
     let newList = []
-    let [year, month] = date.split(' - ')
+    let [year, month] = date.split('-')
 
     for(let i in list) {
         if (
@@ -40,4 +40,9 @@ export const formatCurrentMonth = (currentMonth) => {
     let months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     return `${months[parseInt(month) - 1]} de ${year}`
 
+}
+
+export const newDateAdjusted = (dateField) => {
+    let [year, month, day] = dateField.split('-')
+    return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
 }

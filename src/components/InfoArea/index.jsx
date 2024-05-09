@@ -1,7 +1,8 @@
 import * as C from './styles'
 import { formatCurrentMonth } from '../../helpers/dateFilter'
+import { ResumeItem } from '../ResumeItem'
 
-export const InfoArea = ( {currentMonth, onMonthChange} ) => {
+export const InfoArea = ( {currentMonth, onMonthChange, income, expense} ) => {
     
 
         const handlePrevMonth = () => {
@@ -19,6 +20,7 @@ export const InfoArea = ( {currentMonth, onMonthChange} ) => {
         onMonthChange(`${currentDate.getFullYear()}-${currentDate.getMonth() + 1}`)
     }
 
+
     return (
         <C.Container>
             <C.MonthArea>
@@ -27,7 +29,9 @@ export const InfoArea = ( {currentMonth, onMonthChange} ) => {
                 <C.MonthArrow onClick={handleNextMonth}>➡️</C.MonthArrow>
             </C.MonthArea>
             <C.ResumeArea>
-
+                <ResumeItem title='Receitas' value={income} />
+                <ResumeItem title='Despesas' value={expense} />
+                <ResumeItem title='Balanço' value={income - expense } color={(income-expense) < 0 ? 'red' : 'green'} />
             </C.ResumeArea>
         </C.Container>
     )

@@ -1,36 +1,9 @@
-import * as C from './styles'
-import { useState, useEffect } from "react"
-import {items} from './../../data/items'
-import { getCurrentMonth, filterListByMonth } from './../../helpers/dateFilter'
 import { TableItem } from '../TableItem'
-import { InfoArea } from '../InfoArea'
+import * as C from './styles'
 
-
-
-export const TableArea = (  ) => {   
-
-const   [list, setList] = useState(items)
-  const [filteredList, setFilteredList] = useState([])
-   const [currentMonth, setCurrentMonth ] = useState(getCurrentMonth())
-
-  useEffect( () => {
-      setFilteredList(filterListByMonth(list, currentMonth))
-  }, [list, currentMonth] )
-
-
-  const handleMonthChange = (newMonth) => {
-    setCurrentMonth(newMonth)
-
-  }
-
+export const TableArea = ( {list} ) => {   
         
-    return (
-
-        <>
-        <InfoArea 
-        currentMonth={currentMonth}
-        onMonthChange={handleMonthChange}
-        />
+    return (     
 
         <C.Table>
             <thead>
@@ -42,13 +15,11 @@ const   [list, setList] = useState(items)
                     </tr>
             </thead>
             <tbody>
-                    {filteredList.map((item, index) => (
-                <TableItem key={index} item={item} />
-            ))}
+                {list.map((item, index) => (
+                    <TableItem key={index} item={item} />
+                ))}
             </tbody>
+        
         </C.Table>
-        </>
-
     )
-
 }
