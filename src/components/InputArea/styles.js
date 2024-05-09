@@ -29,6 +29,14 @@ export const Input = styled.input`
     border-radius: 5px;
 `
 
+export const Select = styled.select`
+    width: 100%;
+    height: 30px;
+    padding: 0 5px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+`;
+
 export const Button = styled.button`
     width: 100%;
     height: 30px;
