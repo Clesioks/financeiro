@@ -8,7 +8,7 @@ export const TableArea = ( {list} ) => {
         <C.Table>
             <thead>
                     <tr>
-                        <C.TableHeadColumn width={100}>Data</C.TableHeadColumn>
+                        <C.TableHeadColumn width={100}>Data</C.TableHeadColumn>                        
                         <C.TableHeadColumn width={130}>Categoria</C.TableHeadColumn>
                         <C.TableHeadColumn>Título</C.TableHeadColumn>
                         <C.TableHeadColumn width={145}>Valor</C.TableHeadColumn>

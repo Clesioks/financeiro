@@ -17,7 +17,7 @@ export const InputArea = ({onAdd}) => {
 
         let errors = []
 
-        if(isNaN(new Date(dateField).getTime())) {
+         if(isNaN(new Date(dateField).getTime())) {
             errors.push('Data inválida')
         }
 
